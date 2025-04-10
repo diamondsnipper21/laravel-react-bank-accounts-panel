@@ -1,111 +1,86 @@
-# Laravel + React 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel React Bank Accounts Panel</title>
+</head>
+<body>
 
-Back-end 
-- [x] Laravel 10 + PHP 8
+    <h1>Laravel React Bank Accounts Panel</h1>
 
-Front-end 
-- [x] React 18 + TypeScript + Vite
-- [x] React Router v6
-- [x] Tailwind CSS / SASS
-- [x] Node 20+
+    <p>A modern and intuitive web application built with <strong>Laravel</strong> and <strong>React</strong> for managing bank accounts. This project provides a sleek and responsive user interface for viewing, adding, editing, and deleting bank accounts, all backed by a robust <strong>Laravel</strong> API for seamless data management. It combines the power of <strong>Laravel</strong> for backend development and the dynamic nature of <strong>React</strong> for front-end interactions.</p>
 
----
+    <h2>Features</h2>
+    <ul>
+        <li><strong>User Authentication</strong>: Secure login and registration system powered by Laravel's built-in authentication.</li>
+        <li><strong>Bank Account Management</strong>: Add, edit, view, and delete bank account details.</li>
+        <li><strong>Responsive UI</strong>: Built with React and styled with modern CSS frameworks for a seamless experience across devices.</li>
+        <li><strong>API Integration</strong>: A RESTful API built with Laravel to handle all operations securely and efficiently.</li>
+        <li><strong>Data Validation</strong>: Ensures that all data inputs, such as account numbers and balances, are validated on both the client and server sides.</li>
+        <li><strong>Role-Based Access</strong>: Allows for different levels of user access (admin, user) with appropriate privileges for managing bank accounts.</li>
+    </ul>
 
-### Set Up 
+    <h2>Tech Stack</h2>
+    <h3>Back-end</h3>
+    <ul>
+        <li><strong>Laravel 10</strong> + PHP 8</li>
+    </ul>
 
-Create `.env` file from the example
-```
-cp .env.example .env
-```
+    <h3>Front-end</h3>
+    <ul>
+        <li><strong>React 18</strong> + TypeScript + Vite</li>
+        <li><strong>React Router v6</strong></li>
+        <li><strong>Tailwind CSS / SASS</strong></li>
+        <li><strong>Node 20+</strong></li>
+    </ul>
 
-Generate an application key
-```
-php artisan key:generate
-```
+    <h2>Installation</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>PHP 8.0+</li>
+        <li>Composer</li>
+        <li>Node.js (v20 or higher) & npm</li>
+        <li>MySQL (or compatible database)</li>
+    </ul>
 
-Install dependencies 
-```
-composer install && npm install
-``` 
+    <h3>Installation Steps</h3>
+    <ol>
+        <li>Clone this repository:
+            <pre><code>git clone https://github.com/your-username/laravel-react-bank-accounts-panel.git</code></pre>
+        </li>
+        <li>Navigate to the project directory:
+            <pre><code>cd laravel-react-bank-accounts-panel</code></pre>
+        </li>
+        <li>Install Laravel dependencies:
+            <pre><code>composer install</code></pre>
+        </li>
+        <li>Install React dependencies:
+            <pre><code>npm install</code></pre>
+        </li>
+        <li>Configure the `.env` file for your database and API settings.</li>
+        <li>Run migrations to set up the database:
+            <pre><code>php artisan migrate</code></pre>
+        </li>
+        <li>Start the Laravel development server:
+            <pre><code>php artisan serve</code></pre>
+        </li>
+        <li>Start the React development server:
+            <pre><code>npm run dev</code></pre>
+        </li>
+    </ol>
 
-Run Laravel and React dev server concurrently
-```
-npm run dev
-``` 
+    <h3>Usage</h3>
+    <ul>
+        <li>Visit <a href="http://localhost:8000">http://localhost:8000</a> for the backend API.</li>
+        <li>Visit <a href="http://localhost:3000">http://localhost:3000</a> for the frontend React panel.</li>
+    </ul>
 
-Preview production build 
-```
-npm run production
-``` 
+    <h2>Contributing</h2>
+    <p>Feel free to fork the repository, submit issues, and create pull requests. Contributions to improve the functionality and features of the project are always welcome!</p>
 
----
+    <h2>License</h2>
+    <p>This project is open-source and available under the <a href="LICENSE">MIT License</a>.</p>
 
-### Routes 
-
-##### `routes/web.php` 
-
-```php
-Route::get('/{any}', function () {
-    return view('app');
-})->where('any', '^(?!api).*');
-```
-
-Home: http://localhost:8000
-
-Login: http://localhost:8000/login
-
-404: http://localhost:8000/i-dont-exist
-
-##### `routes/api_v1.php` 
-
-```php
-// Authenticated API (sanctum)
-Route::group([
-    'middleware' => ['api_authenticated']
-], function() {
-    Route::get('/example-authenticated', [ExampleController::class, 'authenticated']);
-});
-
-// Public API
-Route::group([
-    'middleware' => ['api_public'],
-], function () {
-    Route::get('/example', [ExampleController::class, 'index']);
-});
-
-``` 
-
-`API Example:` http://localhost:8000/api/v1/example 
-
-`API Protected Example:` http://localhost:8000/api/v1/example-authenticated 
-
----
-
-### Middleware Groups 
-
-Middleware groups `web`, `api_public` and `api_authenticated` are defined in `app/Http/Kernel.php` 
-
----
-
-### Vite `.env` Variables 
-
-Any `.env` file variables prefixed with `VITE_` will be accessible in our React application using `import.meta.env`. 
-
-This is because the `vite.config.ts` is injecting them. 
-
-```ts
-// vite.config.ts
-...
-    define: {
-        __APP_ENV__: JSON.stringify(env.APP_ENV),
-    },
-...
-```
-
-To provide typings for `import.meta.env`, you can include the necessary type definitions in the `resources/app/env.d.ts` file.
-
----
-
-### Laravel Docs 
-
-https://laravel.com/docs/10.x
+</body>
+</html>
