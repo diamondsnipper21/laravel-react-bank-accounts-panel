@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel React Bank Accounts Panel</title>
-</head>
-<body>
+
 
     <h1>Laravel React Bank Accounts Panel</h1>
 
@@ -81,6 +74,3 @@
 
     <h2>License</h2>
     <p>This project is open-source and available under the <a href="LICENSE">MIT License</a>.</p>
-
-</body>
-</html>
